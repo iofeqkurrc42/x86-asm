@@ -1,32 +1,31 @@
-## x86 汇编语言
+## x86 Assembly Language
 
-### 需要
-- nasm 编译器
-- bochs 虚拟机(bochs bochs-x vgabios)
+[中文](./README_CN.md)
 
-### 配置
+### Requirements
+- nasm compiler
+- bochs emulator (bochs bochs-x vgabios)
 
-需要配置 bochs 配置在此, 若使用《x86 汇编语言: 从实模式到保护模式》里虚拟硬盘, 则根据书中配置.
-
-注意:bochs 配置里
-
+### Configuration
+Configure bochs here. If using the virtual hard disk from 《x86 汇编语言: 从实模式到保护模式》, follow the book's configuration.
+Note: In bochs configuration, change
 ```
 romimage: file=/usr/share/bochs/BIOS-bochs-latest
 ```
-
-改为
-
+to
 ```
 romimage: file="/usr/share/bochs/BIOS-bochs-legacy"
 ```
-
-
-### 运行
+### Run
 ```sh
 ./run.sh xx.asm
 ```
+With custom virtual disk
+```
+./run.sh xx.asm xxx.img
+```
 
-### 引用
+### Reference
 - 《x86 汇编语言: 从实模式到保护模式》
-- [Bochs 配置](http://blog.ccyg.studio/article/eedcc300-35f4-4174-9622-c336aa8d7881/)
-- [Bochs 在 Ubuntu 下启动失败解决方法](http://blog.ccyg.studio/article/eedcc300-35f4-4174-9622-c336aa8d7881/)
+- [Bochs configuration](http://blog.ccyg.studio/article/eedcc300-35f4-4174-9622-c336aa8d7881/)
+- [Bochs Startup Failure Solutions on Ubuntu](http://blog.ccyg.studio/article/eedcc300-35f4-4174-9622-c336aa8d7881/)
