@@ -27,5 +27,6 @@ With custom virtual disk
 
 ### Reference
 - 《x86 汇编语言: 从实模式到保护模式》
+- [《x86 汇编语言: 从实模式到保护模式》Resoure](https://www.lizhongc.com/thread-1-1-1.html)
 - [Bochs configuration](http://blog.ccyg.studio/article/eedcc300-35f4-4174-9622-c336aa8d7881/)
 - [Bochs Startup Failure Solutions on Ubuntu](http://blog.ccyg.studio/article/eedcc300-35f4-4174-9622-c336aa8d7881/)

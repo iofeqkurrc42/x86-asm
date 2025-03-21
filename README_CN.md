@@ -32,5 +32,6 @@ romimage: file="/usr/share/bochs/BIOS-bochs-legacy"
 
 ### 引用
 - 《x86 汇编语言: 从实模式到保护模式》
+- [《x86 汇编语言: 从实模式到保护模式》配套资源](https://www.lizhongc.com/thread-1-1-1.html)
 - [Bochs 配置](http://blog.ccyg.studio/article/eedcc300-35f4-4174-9622-c336aa8d7881/)
 - [Bochs 在 Ubuntu 下启动失败解决方法](http://blog.ccyg.studio/article/eedcc300-35f4-4174-9622-c336aa8d7881/)
