@@ -44,7 +44,14 @@ if not test -f $vhd_file
     exit 1
 end
 
-sudo dd if=$output_name of=$vhd_file bs=512 count=1 conv=notrunc
+# 删除 bochs 文件加锁文件
+set vhd_file_lock "$vhd_file.lock"
+if test -f $vhd_file_lock
+    rm $vhd_file_lock
+	  echo "已删除bochs 文件加锁文件 $vhd_file_lock"
+end
+
+# 设置 sudo dd if=$output_name of=$vhd_file bs=512 count=1 conv=notrunc
 if not test $status -eq 0
     echo "写入 $vhd_file 文件失败"
     exit 1
@@ -56,7 +63,7 @@ rm $output_name
 # 启动 Bochs 模拟器
 if not command -v bochs >/dev/null
     echo "错误：Bochs 未安装。请执行以下命令安装："
-    echo "sudo apt-get install bochs bochs-x"
+    echo "sudo apt-get install bochs bochs-x vgabios"
     exit 1
 end
 

@@ -1,5 +1,4 @@
 #!/bin/bash
-
 if ! command -v nasm &>/dev/null; then
 	echo "错误：NASM 未安装。请执行以下命令安装："
 	echo "sudo apt-get update && sudo apt-get install nasm"
@@ -33,6 +32,13 @@ if [ ! -f "$vhd_file" ]; then
 	echo "错误：目标VHD文件 $vhd_file 不存在"
 	exit 1
 fi
+
+vhd_file_lock = "$vhd_file.lock" # 默认 VHD 文件加锁文件名
+if [ -f "$vhd_file_lock" ]; then
+	rm "$vhd_file_lock"
+	echo "已删除bochs 文件加锁文件 $vhd_file_lock"
+fi
+
 sudo dd if="$output_name" of="$vhd_file" bs=512 count=1 conv=notrunc
 if [ $? -ne 0 ]; then
 	echo "写入 LEECHUNG.vhd 文件失败"
@@ -45,7 +51,7 @@ rm "$output_name"
 # 启动 Bochs 模拟器
 if ! command -v bochs &>/dev/null; then
 	echo "错误：Bochs 未安装。请执行以下命令安装："
-	echo "sudo apt-get install bochs bochs-x"
+	echo "sudo apt-get install bochs bochs-x vgabios"
 	exit 1
 fi
 echo "启动 Bochs 模拟器..."

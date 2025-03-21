@@ -1,5 +1,6 @@
 *.bin
 *.log
 *.ini
+*.lock
 bochsrc
 LEECHUNG.vhd
