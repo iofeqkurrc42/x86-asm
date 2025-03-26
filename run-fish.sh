@@ -44,14 +44,8 @@ if not test -f $vhd_file
     exit 1
 end
 
-# 删除 bochs 文件加锁文件
-set vhd_file_lock "$vhd_file.lock"
-if test -f $vhd_file_lock
-    rm $vhd_file_lock
-	  echo "已删除bochs 文件加锁文件 $vhd_file_lock"
-end
-
 # 设置 sudo dd if=$output_name of=$vhd_file bs=512 count=1 conv=notrunc
+sudo dd if=$output_name of=$vhd_file bs=512 count=1 conv=notrunc
 if not test $status -eq 0
     echo "写入 $vhd_file 文件失败"
     exit 1
