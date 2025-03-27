@@ -6,20 +6,14 @@
 data     db 0x00,0x01,0x00,0x02
 
 lbb:
-         mov ax,0xb800                 ;设置附加段基地址 
-         mov es,ax
          mov byte [es:0x00],'>'
          mov byte [es:0x01],0x07
          jmp end
 lbz:
-         mov ax,0xb800                 ;设置附加段基地址 
-         mov es,ax
          mov byte [es:0x00],'='
          mov byte [es:0x01],0x07
          jmp end
 lbl:
-         mov ax,0xb800                 ;设置附加段基地址 
-         mov es,ax
          mov byte [es:0x00],'<'
          mov byte [es:0x01],0x07
          jmp end
@@ -27,6 +21,9 @@ lbl:
 start:
          mov ax,0x7c0                  ;设置数据段基地址
          mov ds,ax
+
+         mov ax,0xb800                 ;设置附加段基地址 
+         mov es,ax
 
          mov si,data
          mov ax,[si]
