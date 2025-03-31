@@ -58,7 +58,7 @@ word_next:
          mov byte [es:0x03],0x07
          mov di,pos_cnt
          mov ax,[di]
-         add al,'0'
+         or al,0x30
          mov ah,0x07
          mov [es:0x04],ax
          mov byte [es:0x06],'n'
@@ -67,7 +67,7 @@ word_next:
          mov byte [es:0x09],0x07
          mov di,neg_cnt
          mov ax,[di]
-         add al,'0'
+         or al,0x30
          mov ah,0x07
          mov [es:0x0A],ax
 
