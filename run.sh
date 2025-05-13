@@ -1,4 +1,5 @@
 #!/bin/bash
+
 if ! command -v nasm &>/dev/null; then
 	echo "错误：NASM 未安装。请执行以下命令安装："
 	echo "sudo apt-get update && sudo apt-get install nasm"
