@@ -9,7 +9,7 @@ SECTION header vstart=0                     ;定义用户程序头部段
     
     ;用户程序入口点
     code_entry      dw start                ;偏移地址[0x04]
-                    dd section.code_1.start ;段地址[0x06] 
+                    dd section.code_1.start ;段地址[0x06],dd 指令表示 32 位
     
     realloc_tbl_len dw (header_end-code_1_segment)/4
                                             ;段重定位表项个数[0x0a]
