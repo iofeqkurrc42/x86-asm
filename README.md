@@ -18,12 +18,11 @@ romimage: file="/usr/share/bochs/BIOS-bochs-legacy"
 ```
 ### Run
 ```sh
-./run.sh xx.asm
+./run.sh [-s seek] [-n] <filename.asm> [vhd_file.vhd]
 ```
-With custom virtual disk
-```
-./run.sh xx.asm xxx.img
-```
+-s: set seek
+-n: not run bochs
+
 
 ### Reference
 - 《x86 汇编语言: 从实模式到保护模式》
