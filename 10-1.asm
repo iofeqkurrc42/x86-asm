@@ -158,6 +158,14 @@ start:
       and al,0xfe                        ;清除bit 0(此位连接RTC)
       out 0xa1,al                        ;写回此寄存器 
 
+      ; 屏蔽除RTC外的其他所有中断，观察字符“@”的变化速度
+      ;mov al,11111110b     ;允许RTC中断，阻断从片其他中断
+      ;out 0xa1,al
+
+      ;mov al,11111011b     ;只允许从片上的中断（从片通过bit 2与主片级联）
+      ;out 0x21,al          ;写到8259主片的IMR寄存器
+
+
       sti                                ;重新开放中断 
 
       mov bx,done_msg                    ;显示安装完成信息 
